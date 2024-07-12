@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url("images/tło.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+
+h1 {
+    text-align: center; 
+    color: #ffffff; 
+    margin-bottom: 20px; 
+    text-shadow: 2px 2px black; 
+    font-size: 2.5em; 
+    letter-spacing: 1px; 
+}
+
+button {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #4ca1af;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #666699;
+    transform: scale(1.05);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+.h1{
+    text-align: center;
+}
+
+.league-item {
+    position: relative; 
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, filter 0.3s; 
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; 
+    background: linear-gradient(135deg, #666699, #4ca1af);
+    text-decoration: none;
+    
+}
+
+.league-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 220%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0; 
+    transition: filter 0.3s; 
+}
+.league-item:hover{
+    transform: scale(1.07);
+}
+.league-item:hover::before {
+    filter: blur(2px); 
+    
+}
+
+.league-item h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.league-epl::before {
+    background-image: url("images/anglia.jpg");
+}
+
+.league-championship::before {
+    background-image: url("images/anglia1.png");
+    background-size: 120%;
+}
+
+.league-bundesliga::before {
+    background-image: url("images/niemcy.png");
+    background-size: 110%;
+    
+}
+
+.league-bundesliga2::before {
+    background-image: url("images/niemcy1.png");
+    background-size: 90%;
+}
+
+.league-seriea::before {
+    background-image: url("images/wlochy.png");
+    background-size: 190%;
+}
+
+.league-serieb::before {
+    background-image: url("images/wlochy1.png");
+    background-size: 120%;
+}
+
+.league-ligue1::before {
+    background-image: url("images/francja.png");
+    background-size: 180%;
+}
+
+.league-ligue2::before {
+    background-image: url("images/francja1.png");
+    background-size: 130%;
+    
+}
+
+.league-laliga::before {
+    background-image: url("images/hiszpania.png");
+    background-size: 240%;
+}
+
+.league-laliga2::before {
+    background-image: url("images/hiszpania2.png");
+    background-size: 70%;
+}
+
+#expand-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: linear-gradient(135deg, #666699, #4ca1af);
+    z-index: 9999;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+#matches-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.match-item {
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #666699, #4ca1af);
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s, filter 0.3s;
+    font-size: 1rem;
+    position: relative; 
+}
+
+.match-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.match-item p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.match-item:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.teams-logos {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.team-logo {
+    width: 50px;
+    height: auto;
+}
+.star {
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+}
+
+.star.favorite {
+    color: #ffd700; 
+}
+
+.match-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
